@@ -99,7 +99,6 @@ export function QuoteChecklist() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [propostaId, setPropostaId] = useState<number | null>(null);
 
   useEffect(() => {
     if (!form.uf) {
@@ -182,7 +181,6 @@ export function QuoteChecklist() {
     e.preventDefault();
     setSubmitError(null);
     setSent(false);
-    setPropostaId(null);
 
     if (!gastoComplete) {
       setSubmitError(
@@ -229,7 +227,6 @@ export function QuoteChecklist() {
         throw new Error(data.erro || "Não foi possível enviar a solicitação.");
       }
 
-      setPropostaId(typeof data.id === "number" ? data.id : null);
       setSent(true);
     } catch (err) {
       setSubmitError(
@@ -554,9 +551,8 @@ export function QuoteChecklist() {
             )}
             {sent && (
               <p className={styles.confirm} role="status">
-                Solicitação recebida
-                {propostaId ? ` (nº ${propostaId})` : ""}. Em breve
-                retornaremos o contato com a proposta.
+                Solicitação recebida. Em breve retornaremos o contato com a
+                proposta.
               </p>
             )}
           </div>
