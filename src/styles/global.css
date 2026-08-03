@@ -9,8 +9,8 @@
   --ink: #1a1228;
   --muted: #5c536c;
   --line: rgba(40, 8, 88, 0.14);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Outfit", system-ui, sans-serif;
+  --font-display: "Source Serif 4", "Times New Roman", Georgia, serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1120px;
 }
@@ -30,7 +30,7 @@ html {
 body {
   min-height: 100vh;
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.6;
@@ -105,11 +105,11 @@ textarea {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: 0.01em;
-  max-width: 16ch;
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
   color: var(--purple);
 }
 
@@ -118,7 +118,7 @@ textarea {
   max-width: 38rem;
   color: var(--muted);
   font-size: 1.05rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @keyframes rise {
