@@ -3,7 +3,7 @@
   top: 0;
   z-index: 40;
   backdrop-filter: blur(16px);
-  background: rgba(7, 5, 12, 0.72);
+  background: rgba(247, 244, 251, 0.82);
   border-bottom: 1px solid transparent;
   animation: fade 0.8s var(--ease) both;
 }
@@ -32,10 +32,9 @@
 }
 
 .mark {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.75rem;
+  height: auto;
   object-fit: contain;
-  border-radius: 2px;
 }
 
 .name {
@@ -44,6 +43,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--purple);
 }
 
 .nav {
@@ -56,27 +56,26 @@
 }
 
 .nav a {
-  color: var(--cream-muted);
+  color: var(--muted);
   transition: color 0.25s var(--ease);
 }
 
 .nav a:hover {
-  color: var(--cream);
+  color: var(--purple);
 }
 
 .cta {
-  color: var(--cream) !important;
+  color: #fff !important;
   padding: 0.55rem 1.1rem;
-  border: 1px solid var(--line);
-  background: rgba(40, 8, 88, 0.45);
+  border: 1px solid transparent;
+  background: var(--purple);
   transition:
     background 0.25s var(--ease),
     border-color 0.25s var(--ease) !important;
 }
 
 .cta:hover {
-  background: rgba(90, 31, 168, 0.35);
-  border-color: rgba(139, 107, 196, 0.55);
+  background: var(--purple-glow);
 }
 
 @media (max-width: 720px) {

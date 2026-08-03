@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  background: linear-gradient(180deg, transparent, rgba(40, 8, 88, 0.18) 40%, transparent);
+  background: linear-gradient(180deg, transparent, rgba(239, 232, 248, 0.85) 35%, transparent);
 }
 
 .title {
@@ -13,6 +13,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 0;
   border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .row {
@@ -27,7 +28,7 @@
 }
 
 .row:hover {
-  background: rgba(40, 8, 88, 0.28);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .row h3 {
@@ -35,10 +36,11 @@
   font-size: 1.65rem;
   font-weight: 500;
   margin-bottom: 0.65rem;
+  color: var(--purple);
 }
 
 .row p {
-  color: var(--cream-muted);
+  color: var(--muted);
   font-size: 0.98rem;
   max-width: 34rem;
 }

@@ -19,6 +19,13 @@ export function Structure() {
   return (
     <section id="estrutura" className={`section ${styles.section}`}>
       <div className="wrap">
+        <img
+          src="/tete-logo.png?v=2"
+          alt="Teresa Castro — Eleição 2026"
+          className={styles.logo}
+          width={420}
+          height={220}
+        />
         <p className="section-label">Nossa estrutura</p>
         <div className={styles.grid}>
           <div>

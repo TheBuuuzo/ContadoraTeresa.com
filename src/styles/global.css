@@ -1,13 +1,14 @@
 :root {
-  --bg: #07050c;
-  --bg-elevated: #0e0a16;
+  --bg: #f7f4fb;
+  --bg-elevated: #ffffff;
+  --bg-soft: #efe8f8;
   --purple: #280858;
   --purple-mid: #3d0f7a;
   --purple-glow: #5a1fa8;
-  --purple-soft: #8b6bc4;
-  --cream: #f4efe8;
-  --cream-muted: #c9c0d4;
-  --line: rgba(139, 107, 196, 0.28);
+  --purple-soft: #6b4a9e;
+  --ink: #1a1228;
+  --muted: #5c536c;
+  --line: rgba(40, 8, 88, 0.14);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -30,7 +31,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   font-weight: 300;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -44,9 +45,10 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 15% -10%, rgba(40, 8, 88, 0.55), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(90, 31, 168, 0.18), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(40, 8, 88, 0.35), transparent 55%);
+    radial-gradient(ellipse 70% 45% at 10% -5%, rgba(90, 31, 168, 0.14), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 95% 15%, rgba(40, 8, 88, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(139, 107, 196, 0.12), transparent 55%),
+    linear-gradient(180deg, #fbfafe 0%, var(--bg) 40%, #f3eef9 100%);
 }
 
 body::after {
@@ -55,7 +57,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.045;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -108,12 +110,13 @@ textarea {
   line-height: 1.12;
   letter-spacing: 0.01em;
   max-width: 16ch;
+  color: var(--purple);
 }
 
 .section-lead {
   margin-top: 1.25rem;
   max-width: 38rem;
-  color: var(--cream-muted);
+  color: var(--muted);
   font-size: 1.05rem;
   font-weight: 300;
 }

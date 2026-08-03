@@ -5,7 +5,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.brand}>
-          <img src="/tete-logo.png" alt="Teresa Castro" width={180} height={95} />
+          <img src="/tete-logo.png?v=2" alt="Teresa Castro" width={180} height={95} />
           <p>
             Contabilidade e gestão para campanhas eleitorais.
             <br />

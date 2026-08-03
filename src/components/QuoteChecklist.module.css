@@ -16,8 +16,9 @@
 }
 
 .form {
-  background: rgba(14, 10, 22, 0.72);
+  background: var(--bg-elevated);
   border: 1px solid var(--line);
+  box-shadow: 0 16px 48px rgba(40, 8, 88, 0.06);
   padding: clamp(1.5rem, 4vw, 2.75rem);
 }
 
@@ -35,13 +36,13 @@
 .progressTrack {
   flex: 1;
   height: 2px;
-  background: rgba(139, 107, 196, 0.15);
+  background: rgba(40, 8, 88, 0.1);
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, var(--purple), var(--purple-soft));
+  background: linear-gradient(90deg, var(--purple), var(--purple-glow));
   transition: width 0.4s var(--ease);
 }
 
@@ -57,12 +58,17 @@
   font-weight: 500;
   margin-bottom: 1.15rem;
   width: 100%;
+  color: var(--purple);
 }
 
 .hint {
-  color: var(--cream-muted);
+  color: var(--muted);
   font-size: 0.92rem;
-  margin: -0.5rem 0 1.15rem;
+  margin: 0 0 1.15rem;
+}
+
+.fields + .hint {
+  margin-top: 1.85rem;
 }
 
 .fields {
@@ -75,11 +81,168 @@
 .full {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.7rem;
   font-size: 0.82rem;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: var(--cream-muted);
+  color: var(--muted);
+}
+
+.span2 {
+  grid-column: 1 / -1;
+}
+
+.checkRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.15rem 0 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(40, 8, 88, 0.14);
+  background: var(--bg);
+  cursor: pointer;
+  transition:
+    border-color 0.25s var(--ease),
+    background 0.25s var(--ease);
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+.checkRow:hover {
+  border-color: rgba(40, 8, 88, 0.3);
+  background: #fff;
+}
+
+.checkRow input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gastoBar {
+  margin: 0.25rem 0 1.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(40, 8, 88, 0.14);
+  background: var(--bg);
+}
+
+.gastoBarHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+.gastoBarHead strong {
+  color: var(--purple);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gastoTrack {
+  height: 8px;
+  background: rgba(40, 8, 88, 0.08);
+  overflow: hidden;
+}
+
+.gastoFill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--purple), var(--purple-glow));
+  transition: width 0.35s var(--ease);
+}
+
+.gastoStatus {
+  margin-top: 0.65rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.gastoOk {
+  border-color: rgba(40, 8, 88, 0.35);
+  background: var(--bg-soft);
+}
+
+.gastoOk .gastoStatus,
+.gastoOk .gastoBarHead strong {
+  color: var(--purple);
+}
+
+.gastoOver {
+  border-color: rgba(155, 28, 28, 0.35);
+  background: rgba(155, 28, 28, 0.04);
+}
+
+.gastoOver .gastoFill {
+  background: #9b1c1c;
+}
+
+.gastoOver .gastoStatus,
+.gastoOver .gastoBarHead strong {
+  color: #9b1c1c;
+}
+
+.percentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem 1.25rem;
+}
+
+.percentField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.percentInput {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  min-height: 2.85rem;
+  background: var(--bg);
+  border: 1px solid rgba(40, 8, 88, 0.16);
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.percentInput:focus-within {
+  border-color: rgba(40, 8, 88, 0.45);
+  background: #fff;
+}
+
+.percentInput input {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.7rem 0.9rem;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.percentInput span {
+  padding-right: 0.9rem;
+  color: var(--purple-soft);
+  font-weight: 500;
+}
+
+.fieldset .full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 1.35rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
 }
 
 .fields input,
@@ -88,11 +251,11 @@
   width: 100%;
   min-height: 2.85rem;
   padding: 0.7rem 0.9rem;
-  background: rgba(7, 5, 12, 0.65);
-  border: 1px solid rgba(139, 107, 196, 0.22);
-  color: var(--cream);
+  background: var(--bg);
+  border: 1px solid rgba(40, 8, 88, 0.16);
+  color: var(--ink);
   outline: none;
-  transition: border-color 0.25s var(--ease);
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
 
 .full textarea {
@@ -104,7 +267,13 @@
 .fields input:focus,
 .fields select:focus,
 .full textarea:focus {
-  border-color: rgba(139, 107, 196, 0.65);
+  border-color: rgba(40, 8, 88, 0.45);
+  background: #fff;
+}
+
+.fields select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .fields select {
@@ -120,8 +289,8 @@
 }
 
 .fields select option {
-  background: #120a1e;
-  color: var(--cream);
+  background: #fff;
+  color: var(--ink);
 }
 
 .checks {
@@ -136,24 +305,25 @@
   align-items: start;
   gap: 0.85rem;
   padding: 1rem 1.1rem;
-  border: 1px solid rgba(139, 107, 196, 0.2);
-  background: rgba(7, 5, 12, 0.4);
+  border: 1px solid rgba(40, 8, 88, 0.14);
+  background: var(--bg);
   cursor: pointer;
   transition:
     border-color 0.25s var(--ease),
     background 0.25s var(--ease);
   font-size: 0.98rem;
   letter-spacing: 0;
-  color: var(--cream);
+  color: var(--ink);
 }
 
 .checks label:hover {
-  border-color: rgba(139, 107, 196, 0.45);
+  border-color: rgba(40, 8, 88, 0.3);
+  background: #fff;
 }
 
 .checked {
-  border-color: rgba(139, 107, 196, 0.65) !important;
-  background: rgba(40, 8, 88, 0.4) !important;
+  border-color: rgba(40, 8, 88, 0.4) !important;
+  background: var(--bg-soft) !important;
 }
 
 .checks input {
@@ -166,8 +336,8 @@
   width: 1.1rem;
   height: 1.1rem;
   margin-top: 0.15rem;
-  border: 1px solid rgba(139, 107, 196, 0.55);
-  background: transparent;
+  border: 1px solid rgba(40, 8, 88, 0.4);
+  background: #fff;
   position: relative;
   flex-shrink: 0;
 }
@@ -176,7 +346,7 @@
   content: "";
   position: absolute;
   inset: 2px;
-  background: var(--purple-soft);
+  background: var(--purple);
 }
 
 .footer {
@@ -188,7 +358,7 @@
 }
 
 .footer > p:first-child {
-  color: var(--cream-muted);
+  color: var(--muted);
   font-size: 0.9rem;
   max-width: 40rem;
 }
@@ -197,9 +367,9 @@
   align-self: flex-start;
   min-height: 3.1rem;
   padding: 0.75rem 1.6rem;
-  background: var(--purple-mid);
-  border: 1px solid rgba(139, 107, 196, 0.55);
-  color: var(--cream);
+  background: var(--purple);
+  border: 1px solid var(--purple);
+  color: #fff;
   font-weight: 500;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -208,15 +378,31 @@
     transform 0.25s var(--ease);
 }
 
-.submit:hover {
+.submit:hover:not(:disabled) {
   background: var(--purple-glow);
   transform: translateY(-2px);
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .confirm {
   color: var(--purple-soft);
   font-size: 0.92rem;
   animation: fade 0.4s var(--ease) both;
+}
+
+.error {
+  color: #9b1c1c;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .percentGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
