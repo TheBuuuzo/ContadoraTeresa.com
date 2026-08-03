@@ -17,7 +17,7 @@ const pillars = [
 
 export function Structure() {
   return (
-    <section id="estrutura" className={`section ${styles.section}`}>
+    <section id="estrutura" className={styles.section}>
       <div className="wrap">
         <img
           src="/tete-logo.png?v=2"
