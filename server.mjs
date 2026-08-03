@@ -23,21 +23,31 @@ function loadEnvFile(filePath) {
     ) {
       value = value.slice(1, -1);
     }
-    if (!(key in process.env)) process.env[key] = value;
+    value = value.trim();
+    if (!(key in process.env) || !String(process.env[key] || "").trim()) {
+      process.env[key] = value;
+    }
   }
 }
 
 loadEnvFile(path.join(ROOT, ".env"));
 
-const HOST = process.env.CONTADORATERESA_HOST || "192.168.15.101";
-const PORT = Number(process.env.CONTADORATERESA_PORT || 5020);
-const MARRONE_API_URL = (
-  process.env.MARRONE_API_URL || "http://192.168.15.101:5000"
-).replace(/\/$/, "");
+function env(name, fallback = "") {
+  const raw = process.env[name];
+  if (raw == null || String(raw).trim() === "") return fallback;
+  return String(raw).trim();
+}
+
+const HOST = env("CONTADORATERESA_HOST", "192.168.15.101");
+const PORT = Number(env("CONTADORATERESA_PORT", "5020"));
+const MARRONE_API_URL = env("MARRONE_API_URL", "http://192.168.15.101:5000").replace(
+  /\/$/,
+  ""
+);
 const INTEGRATION_KEY =
-  process.env.TERESA_INTEGRATION_KEY ||
-  process.env.CONECTA_INTEGRATION_KEY ||
-  process.env.MARRONE_INTEGRATION_KEY ||
+  env("TERESA_INTEGRATION_KEY") ||
+  env("CONECTA_INTEGRATION_KEY") ||
+  env("MARRONE_INTEGRATION_KEY") ||
   "";
 
 const MIME = {
@@ -161,8 +171,26 @@ if (!fs.existsSync(path.join(DIST, "index.html"))) {
   process.exit(1);
 }
 
+if (!Number.isFinite(PORT) || PORT <= 0) {
+  console.error(`Porta inválida: ${process.env.CONTADORATERESA_PORT}`);
+  process.exit(1);
+}
+
+server.on("error", (err) => {
+  console.error(`Falha ao ouvir em ${HOST}:${PORT}`);
+  console.error(err);
+  if (err && err.code === "EADDRNOTAVAIL") {
+    console.error(
+      "Dica: este IP não existe nesta máquina. Use CONTADORATERESA_HOST=0.0.0.0 ou o IP local correto."
+    );
+  }
+  process.exit(1);
+});
+
 server.listen(PORT, HOST, () => {
   console.log(`ContadoraTeresa ouvindo em http://${HOST}:${PORT}`);
   console.log(`Domínio esperado: https://contadorateresa.com.br`);
-  console.log(`Proxy Marrone: ${MARRONE_API_URL}/api/integracao/propostas-eleitorais/lead`);
+  console.log(
+    `Proxy Marrone: ${MARRONE_API_URL}/api/integracao/propostas-eleitorais/lead`
+  );
 });

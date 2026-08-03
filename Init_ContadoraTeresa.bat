@@ -8,12 +8,19 @@ if not defined CONTADORATERESA_HOST set "CONTADORATERESA_HOST=192.168.15.101"
 if not defined CONTADORATERESA_PORT set "CONTADORATERESA_PORT=5020"
 if not defined MARRONE_API_URL set "MARRONE_API_URL=http://192.168.15.101:5000"
 
+REM Remove espacos acidentais no fim (causam ENOTFOUND no Node)
+for /f "tokens=* delims= " %%A in ("%CONTADORATERESA_HOST%") do set "CONTADORATERESA_HOST=%%A"
+for /f "tokens=* delims= " %%A in ("%CONTADORATERESA_PORT%") do set "CONTADORATERESA_PORT=%%A"
+for /f "tokens=* delims= " %%A in ("%MARRONE_API_URL%") do set "MARRONE_API_URL=%%A"
+
 REM Reaproveita a chave do Marrone se ContadoraTeresa nao tiver .env proprio
 if not exist ".env" if exist "..\Marrone\.env" (
     echo Copiando chaves relevantes de ..\Marrone\.env para .env local...
-    > ".env" echo MARRONE_API_URL=%MARRONE_API_URL%
-    >> ".env" echo CONTADORATERESA_HOST=%CONTADORATERESA_HOST%
-    >> ".env" echo CONTADORATERESA_PORT=%CONTADORATERESA_PORT%
+    > ".env" (
+        echo MARRONE_API_URL=%MARRONE_API_URL%
+        echo CONTADORATERESA_HOST=%CONTADORATERESA_HOST%
+        echo CONTADORATERESA_PORT=%CONTADORATERESA_PORT%
+    )
     for /f "usebackq tokens=1* delims==" %%A in (`findstr /B /I "CONECTA_INTEGRATION_KEY MARRONE_INTEGRATION_KEY TERESA_INTEGRATION_KEY TERESA_PROPOSTA_USUARIO_ID" "..\Marrone\.env"`) do (
         >> ".env" echo %%A=%%B
     )
