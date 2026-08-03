@@ -366,7 +366,7 @@ export function QuoteChecklist() {
                   onChange={(e) =>
                     setForm({ ...form, partido: e.target.value.toUpperCase() })
                   }
-                  placeholder="Ex.: PT, PL, MDB"
+                  placeholder=""
                   maxLength={20}
                 />
               </label>
