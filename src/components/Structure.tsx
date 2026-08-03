@@ -11,7 +11,7 @@ const pillars = [
   },
   {
     title: "Facilitadores digitais",
-    text: "Ferramentas próprias aceleram emissão de contratos, coleta de dados de prestadores e a busca organizada de notas — para a gestão caminhar no ritmo da campanha.",
+    text: "Ferramentas personalizadas aceleram emissão de contratos, coleta de dados de prestadores e a busca organizada de notas — para a gestão caminhar no ritmo da campanha.",
   },
 ];
 

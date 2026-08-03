@@ -29,7 +29,7 @@ export function Support() {
         </h2>
         <p className="section-lead">
           Não vendemos software — entregamos uma operação contábil com
-          ferramentas próprias que tiram atrito do caminho: contratos
+          ferramentas personalizadas que tiram atrito do caminho: contratos
           organizados, notas localizadas e gestão sob controle.
         </p>
         <div className={styles.rows}>
