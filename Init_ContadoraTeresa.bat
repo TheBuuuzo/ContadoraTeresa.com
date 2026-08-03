@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
-echo Iniciando ContadoraTeresa (eleicao.contadorateresa.com.br)...
+echo Iniciando ContadoraTeresa (contadorateresa.com.br)...
 echo.
 
 if not defined CONTADORATERESA_HOST set "CONTADORATERESA_HOST=192.168.15.101"
@@ -40,8 +40,8 @@ if not errorlevel 1 (
 
 echo Host: %CONTADORATERESA_HOST%  Porta: %CONTADORATERESA_PORT%
 echo Marrone API: %MARRONE_API_URL%
-echo Dominio: https://eleicao.contadorateresa.com.br
-echo Cloudflare Tunnel deve apontar este host:porta para eleicao.contadorateresa.com.br
+echo Dominio: https://contadorateresa.com.br
+echo Cloudflare Tunnel deve apontar este host:porta para contadorateresa.com.br
 echo.
 
 node server.mjs

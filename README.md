@@ -2,7 +2,7 @@
 
 Site profissional de campanha para **Teresa Castro** — contabilidade e gestão para candidaturas na Eleição 2026.
 
-**Domínio público:** `https://eleicao.contadorateresa.com.br`  
+**Domínio público:** `https://contadorateresa.com.br`  
 **Porta local (Painel):** `192.168.15.101:5020`
 
 ## Conteúdo
@@ -33,7 +33,7 @@ No Cloudflare Tunnel, aponte:
 
 | Hostname | Service |
 |---|---|
-| `eleicao.contadorateresa.com.br` | `http://192.168.15.101:5020` |
+| `contadorateresa.com.br` | `http://192.168.15.101:5020` |
 
 No servidor, o projeto deve estar em `C:\GitHub\ContadoraTeresa.com` (como os demais).
 

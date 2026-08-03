@@ -163,6 +163,6 @@ if (!fs.existsSync(path.join(DIST, "index.html"))) {
 
 server.listen(PORT, HOST, () => {
   console.log(`ContadoraTeresa ouvindo em http://${HOST}:${PORT}`);
-  console.log(`Domínio esperado: https://eleicao.contadorateresa.com.br`);
+  console.log(`Domínio esperado: https://contadorateresa.com.br`);
   console.log(`Proxy Marrone: ${MARRONE_API_URL}/api/integracao/propostas-eleitorais/lead`);
 });
