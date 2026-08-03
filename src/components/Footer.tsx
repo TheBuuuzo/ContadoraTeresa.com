@@ -14,7 +14,7 @@ export function Footer() {
         </div>
         <div className={styles.meta}>
           <a href="#orcamento">Solicitar orçamento</a>
-          <a href="mailto:contato@contadorateresa.com">contato@contadorateresa.com</a>
+          <a href="mailto:contato@contadorateresa.com">comercial@contadorateresa.com</a>
           <span>© {new Date().getFullYear()} Teresa Castro</span>
         </div>
       </div>
