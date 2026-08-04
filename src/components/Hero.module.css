@@ -64,17 +64,21 @@
 }
 
 .copy {
-  width: min(100%, 34rem);
+  width: min(100%, 38rem);
   color: var(--white);
   animation: rise 0.9s var(--ease) both;
 }
 
 .copy h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.55rem);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.35rem;
+}
+
+.titleLine {
+  white-space: nowrap;
 }
 
 .copy p {
