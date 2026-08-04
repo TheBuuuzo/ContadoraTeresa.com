@@ -6,7 +6,7 @@ export function Footer() {
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.brand}>
           <span className={styles.name}>Teresa Castro</span>
-          <span className={styles.tag}>Soluções Eleitorais</span>
+          <span className={styles.tag}>Eleição 2026</span>
         </div>
         <div className={styles.meta}>
           <a href="#orcamento">Solicitar orçamento</a>

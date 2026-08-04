@@ -6,7 +6,7 @@ export function Header() {
       <div className={`wrap ${styles.inner}`}>
         <a href="#topo" className={styles.brand} aria-label="Teresa Castro — início">
           <span className={styles.name}>Teresa Castro</span>
-          <span className={styles.tag}>Soluções Eleitorais</span>
+          <span className={styles.tag}>Eleição 2026</span>
         </a>
         <nav className={styles.nav} aria-label="Principal">
           <a href="#estrutura">Estrutura</a>
