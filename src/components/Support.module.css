@@ -1,57 +1,72 @@
 .section {
-  position: relative;
-  background: linear-gradient(180deg, transparent, rgba(239, 232, 248, 0.85) 35%, transparent);
-}
-
-.title {
-  max-width: 18ch;
-}
-
-.rows {
-  margin-top: clamp(2.5rem, 5vw, 3.75rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.45);
+  min-height: min(70vh, 640px);
+  background: var(--olive);
 }
 
-.row {
-  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2rem);
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  transition: background 0.3s var(--ease);
+.copy {
+  display: flex;
+  align-items: center;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 5vw, 4rem);
+  color: var(--white);
 }
 
-.row:nth-child(2n) {
-  border-right: none;
-}
-
-.row:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.row h3 {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 500;
-  margin-bottom: 0.65rem;
-  color: var(--purple);
-}
-
-.row p {
-  color: var(--muted);
-  font-size: 0.98rem;
+.copyInner {
   max-width: 34rem;
 }
 
-@media (max-width: 720px) {
-  .rows {
+.copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.75rem;
+}
+
+.copy ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.copy li {
+  padding: 1.15rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.copy li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.media {
+  overflow: hidden;
+  background: var(--beige-deep);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+@media (max-width: 900px) {
+  .section {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .row {
-    border-right: none;
-    padding-inline: 0;
+  .media {
+    min-height: 48vw;
+    max-height: 400px;
+    order: -1;
+  }
+
+  .copy {
+    padding: 2.5rem 1.5rem 3rem;
   }
 }

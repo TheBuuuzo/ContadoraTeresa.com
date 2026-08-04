@@ -5,16 +5,11 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.brand}>
-          <img src="/tete-logo.png?v=2" alt="Teresa Castro" width={180} height={95} />
-          <p>
-            Contabilidade e gestão para campanhas eleitorais.
-            <br />
-            Eleição 2026.
-          </p>
+          <span className={styles.name}>Teresa Castro</span>
+          <span className={styles.tag}>Soluções Eleitorais</span>
         </div>
         <div className={styles.meta}>
           <a href="#orcamento">Solicitar orçamento</a>
-          <a href="mailto:contato@contadorateresa.com">comercial@contadorateresa.com</a>
           <span>© {new Date().getFullYear()} Teresa Castro</span>
         </div>
       </div>

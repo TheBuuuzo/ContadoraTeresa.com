@@ -238,13 +238,12 @@ export function QuoteChecklist() {
   }
 
   return (
-    <section id="orcamento" className={`section ${styles.section}`}>
+    <section id="orcamento" className={styles.section}>
       <div className="wrap">
-        <p className="section-label">Checklist de orçamento</p>
         <div className={styles.head}>
-          <h2 className="section-title">Monte o pedido da sua campanha.</h2>
-          <p className="section-lead">
-            Preencha o checklist para prepararmos uma proposta objetiva — sem
+          <h2 className={styles.title}>Monte o pedido da sua campanha</h2>
+          <p className={styles.lead}>
+            Preencha o checklist para prepararmos uma proposta objetiva, sem
             surpresas no meio do caminho.
           </p>
         </div>

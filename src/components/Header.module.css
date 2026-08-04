@@ -2,68 +2,78 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  backdrop-filter: blur(16px);
-  background: rgba(247, 244, 251, 0.82);
-  border-bottom: 1px solid transparent;
-  animation: fade 0.8s var(--ease) both;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line), transparent);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
 }
 
 .inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  min-height: 4.25rem;
+  justify-content: space-between;
+  min-height: 4.5rem;
   gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1.15;
+}
+
+.tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-soft);
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
-  font-size: 0.88rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  gap: 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--brown);
 }
 
-.nav a {
-  color: var(--muted);
-  transition: color 0.25s var(--ease);
+.nav a:not(.cta) {
+  transition: color 0.2s var(--ease);
 }
 
-.nav a:hover {
-  color: var(--purple);
+.nav a:not(.cta):hover {
+  color: var(--terracotta);
 }
 
 .cta {
-  color: #fff !important;
-  padding: 0.55rem 1.1rem;
-  border: 1px solid transparent;
-  background: var(--purple);
-  transition:
-    background 0.25s var(--ease),
-    border-color 0.25s var(--ease) !important;
+  background: var(--terracotta);
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s var(--ease);
 }
 
 .cta:hover {
-  background: var(--purple-glow);
+  background: var(--terracotta-hover);
 }
 
 @media (max-width: 720px) {
-  .inner {
-    justify-content: center;
+  .tag {
+    display: none;
   }
 
   .nav {
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .nav a:not(.cta) {

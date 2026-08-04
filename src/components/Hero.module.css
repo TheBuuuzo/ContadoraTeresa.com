@@ -1,0 +1,72 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: min(78vh, 720px);
+  background: var(--olive);
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--beige-deep);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 5vw, 4rem);
+  color: var(--white);
+}
+
+.copyInner {
+  max-width: 34rem;
+  animation: rise 0.9s var(--ease) both;
+}
+
+.copy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.35rem;
+}
+
+.copy p {
+  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 1.75rem;
+}
+
+.copy strong {
+  font-weight: 700;
+  color: var(--white);
+}
+
+.cta {
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .media {
+    min-height: 52vw;
+    max-height: 420px;
+  }
+
+  .copy {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+}
