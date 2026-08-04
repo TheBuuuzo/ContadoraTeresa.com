@@ -8,7 +8,7 @@
 .copy {
   display: flex;
   align-items: center;
-  padding: 3.5rem clamp(2.95rem, 4vw, 3.25rem);
+  padding: 4.5rem clamp(2.95rem, 4vw, 3.25rem);
   color: var(--white);
 }
 
