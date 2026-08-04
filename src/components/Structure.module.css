@@ -33,9 +33,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: var(--beige);
   border-radius: var(--radius);
   padding: clamp(1.4rem, 3vw, 1.85rem);
@@ -53,6 +57,7 @@
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.55;
+  flex: 1;
 }
 
 @media (max-width: 900px) {

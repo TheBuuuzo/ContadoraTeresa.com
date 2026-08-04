@@ -5,8 +5,13 @@ export function Header() {
     <header className={styles.header}>
       <div className={`wrap ${styles.inner}`}>
         <a href="#topo" className={styles.brand} aria-label="Teresa Castro — início">
-          <span className={styles.name}>Teresa Castro</span>
-          <span className={styles.tag}>Eleição 2026</span>
+          <img
+            src="/tete-logo.png?v=2"
+            alt="Teresa Castro — Eleição 2026"
+            className={styles.logo}
+            width={220}
+            height={120}
+          />
         </a>
         <nav className={styles.nav} aria-label="Principal">
           <a href="#estrutura">Estrutura</a>

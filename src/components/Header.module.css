@@ -16,25 +16,14 @@
 }
 
 .brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  display: inline-flex;
+  align-items: center;
 }
 
-.name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--brown);
-  line-height: 1.15;
-}
-
-.tag {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brown-soft);
+.logo {
+  width: auto;
+  height: 2.85rem;
+  object-fit: contain;
 }
 
 .nav {
@@ -68,8 +57,8 @@
 }
 
 @media (max-width: 720px) {
-  .tag {
-    display: none;
+  .logo {
+    height: 2.35rem;
   }
 
   .nav {
