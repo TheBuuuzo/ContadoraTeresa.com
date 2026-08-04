@@ -16,7 +16,7 @@ export function Hero() {
           <h1 id="hero-title">
             Um escritório pensado
             <br />
-            para a urgência eleitoral
+            para a urgência&nbsp;eleitoral
           </h1>
           <p>
             Cuidamos da parte administrativa e financeira da campanha com uma
