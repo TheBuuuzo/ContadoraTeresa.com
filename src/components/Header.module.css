@@ -22,7 +22,8 @@
 
 .logo {
   width: auto;
-  height: 2.85rem;
+  height: 2.6rem;
+  max-width: min(240px, 48vw);
   object-fit: contain;
 }
 
@@ -58,7 +59,7 @@
 
 @media (max-width: 720px) {
   .logo {
-    height: 2.35rem;
+    height: 2.2rem;
   }
 
   .nav {
