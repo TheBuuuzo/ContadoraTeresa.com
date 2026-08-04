@@ -1,27 +1,28 @@
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 0;
+  align-items: stretch;
   background: var(--olive);
 }
 
 .copy {
   display: flex;
   align-items: center;
-  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.75rem, 4vw, 3.25rem);
+  padding: 1.5rem clamp(1.5rem, 3.5vw, 2.75rem);
   color: var(--white);
 }
 
 .copyInner {
-  max-width: 34rem;
+  max-width: 32rem;
+  width: 100%;
 }
 
 .copy h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.65rem;
 }
 
 .copy ul {
@@ -31,10 +32,10 @@
 }
 
 .copy li {
-  padding: 0.75rem 0;
+  padding: 0.45rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.28);
-  font-size: 0.95rem;
-  line-height: 1.45;
+  font-size: 0.88rem;
+  line-height: 1.35;
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -42,18 +43,22 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 
+/* Foto só preenche a coluna — não define a altura da seção */
 .media {
+  position: relative;
   overflow: hidden;
   background: var(--beige-deep);
-  min-height: 100%;
+  min-height: 0;
 }
 
 .media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  max-width: none;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 28%;
 }
 
 @media (max-width: 900px) {
@@ -62,12 +67,13 @@
   }
 
   .media {
-    min-height: 220px;
-    max-height: 280px;
+    position: relative;
+    min-height: 200px;
+    max-height: 240px;
     order: -1;
   }
 
   .copy {
-    padding: 1.75rem 1.5rem 2.25rem;
+    padding: 1.35rem 1.35rem 1.65rem;
   }
 }
