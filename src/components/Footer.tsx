@@ -4,13 +4,17 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`wrap ${styles.inner}`}>
-        <div className={styles.brand}>
-          <span className={styles.name}>Teresa Castro</span>
-          <span className={styles.tag}>Eleição 2026</span>
-        </div>
+        <a href="#topo" className={styles.brand} aria-label="Teresa Castro — início">
+          <img
+            src="/tete-logo.png?v=3"
+            alt="Teresa Castro — Eleição 2026"
+            className={styles.logo}
+            width={220}
+            height={50}
+          />
+        </a>
         <div className={styles.meta}>
-          <a href="#orcamento">Solicitar orçamento</a>
-          <span>© {new Date().getFullYear()} Teresa Castro</span>
+          <span>© {new Date().getFullYear()} Caule Gestão</span>
         </div>
       </div>
     </footer>
