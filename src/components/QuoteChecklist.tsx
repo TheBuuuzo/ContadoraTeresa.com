@@ -227,6 +227,9 @@ export function QuoteChecklist() {
         throw new Error(data.erro || "Não foi possível enviar a solicitação.");
       }
 
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-18375082925/f95sCL_hrt0cEK2H9rlE",
+      });
       setSent(true);
     } catch (err) {
       setSubmitError(
