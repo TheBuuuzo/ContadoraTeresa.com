@@ -14,7 +14,7 @@ export function Footer() {
           />
         </a>
         <div className={styles.meta}>
-          <span>© {new Date().getFullYear()} Caule Gestão</span>
+          <span>© {new Date().getFullYear()} Caule Gestão Digital Ltda</span>
         </div>
       </div>
     </footer>
